@@ -26,6 +26,54 @@ http://localhost:8080/api/recipes
 
 ---
 
+### PROMPTS PRUEBA POST
+
+````json
+{
+  "title": "Pozole Rojo",
+  "description": "Tradicional caldo mexicano con maíz y carne de cerdo.",
+  "image": "https://static.thenounproject.com/png/1077596-200.png",
+  "category": "Mexicana",
+  "difficulty": 2,
+  "servings": 6,
+  "cookingTime": 90,
+  "preparationTime": 20,
+  "ingredients": [
+    "Maíz para pozole",
+    "Carne de cerdo",
+    "Chiles secos",
+    "Orégano",
+    "Rábanos",
+    "Lechuga"
+  ],
+  "totalTime": 110
+}
+
+---
+
+````json
+{
+  "title": "Sopes de chorizo",
+  "description": "Sopes crujientes con frijoles y chorizo.",
+  "image": "https://static.thenounproject.com/png/1077596-200.png",
+  "category": "Mexicana",
+  "difficulty": 1,
+  "servings": 4,
+  "cookingTime": 15,
+  "preparationTime": 15,
+  "ingredients": [
+    "Masa de maíz",
+    "Frijoles refritos",
+    "Chorizo",
+    "Lechuga",
+    "Crema",
+    "Queso fresco"
+  ],
+  "totalTime": 30
+}
+
+---
+
 ````markdown
 **SaborifyAPI** es una API RESTful desarrollada con Spring Boot que permite la gestión de recetas de cocina. Utiliza una arquitectura basada en capas (Controladores, Servicios, Repositorios y Entidades) y está preparada para ejecutarse en contenedores Docker junto con una base de datos MySQL.
 
