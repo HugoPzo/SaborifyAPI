@@ -1,5 +1,16 @@
 # SaborifyAPI
 
+### EJECUTAR CON
+
+```bash
+docker-compose build
+docker-compose up
+```
+
+### URL
+
+http://localhost:8080/api/recipes
+
 ````markdown
 **SaborifyAPI** es una API RESTful desarrollada con Spring Boot que permite la gestión de recetas de cocina. Utiliza una arquitectura basada en capas (Controladores, Servicios, Repositorios y Entidades) y está preparada para ejecutarse en contenedores Docker junto con una base de datos MySQL.
 
