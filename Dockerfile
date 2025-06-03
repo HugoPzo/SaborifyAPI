@@ -1,14 +1,12 @@
-# Usa una imagen base con Java 17
-FROM eclipse-temurin:17-jdk-alpine
-
-# Establece el directorio de trabajo dentro del contenedor
+# Etapa 1: construir el jar
+FROM maven:3.9.0-eclipse-temurin-17 AS build
 WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
 
-# Copia el JAR compilado al contenedor
-COPY target/SaborifyAPI-0.0.1-SNAPSHOT.jar app.jar
-
-# Expone el puerto por el que escucha Spring Boot
+# Etapa 2: imagen ligera solo con el .jar
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
+COPY --from=build /app/target/SaborifyAPI-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
-
-# Comando para ejecutar la aplicación
 ENTRYPOINT ["java", "-jar", "app.jar"]

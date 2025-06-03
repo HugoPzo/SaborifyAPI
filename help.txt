@@ -1,0 +1,4 @@
+# COMPILAR JAR ANTES DE CONSTRUIR LA IMAGEN
+# ./mvnw clean package -DskipTests
+# docker-compose build
+# docker-compose up

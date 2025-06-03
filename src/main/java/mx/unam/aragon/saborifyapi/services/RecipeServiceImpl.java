@@ -5,16 +5,13 @@ import mx.unam.aragon.saborifyapi.repositories.RecipeRepository;
 import mx.unam.aragon.saborifyapi.services.interfaces.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.accept.ContentNegotiationManager;
-import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
+
 
 @Service
 public class RecipeServiceImpl implements RecipeService {
 
     @Autowired
     private RecipeRepository recipeRepository;
-    @Autowired
-    private ContentNegotiatingViewResolver contentNegotiatingViewResolver;
 
     @Override
     public Recipe createRecipe(Recipe recipe) {
@@ -43,6 +40,24 @@ public class RecipeServiceImpl implements RecipeService {
             recipe.setCookingTime(updatedRecipe.getCookingTime());
             recipe.setPreparationTime(updatedRecipe.getPreparationTime());
             recipe.setIngredients(updatedRecipe.getIngredients());
+
+            return recipeRepository.save(recipe);
+        }).orElse(null);
+    }
+
+    @Override
+    public Recipe partialUpdateRecipe(Integer id, Recipe patch) {
+        return recipeRepository.findById(id).map(recipe -> {
+            if (patch.getTitle() != null) recipe.setTitle(patch.getTitle());
+            if (patch.getDescription() != null) recipe.setDescription(patch.getDescription());
+            if (patch.getImage() != null) recipe.setImage(patch.getImage());
+            if (patch.getCategory() != null) recipe.setCategory(patch.getCategory());
+            if (patch.getDifficulty() != null) recipe.setDifficulty(patch.getDifficulty());
+            if (patch.getServings() != null) recipe.setServings(patch.getServings());
+            if (patch.getCookingTime() != null) recipe.setCookingTime(patch.getCookingTime());
+            if (patch.getPreparationTime() != null) recipe.setPreparationTime(patch.getPreparationTime());
+            if (patch.getIngredients() != null) recipe.setIngredients(patch.getIngredients());
+
             return recipeRepository.save(recipe);
         }).orElse(null);
     }

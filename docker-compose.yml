@@ -8,7 +8,7 @@ services:
       MYSQL_DATABASE: saborify
       MYSQL_ROOT_PASSWORD: 12345
     ports:
-      - "3310:3306"  # 3310 en host, 3306 en contenedor
+      - "3310:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
@@ -20,11 +20,11 @@ services:
       retries: 5
 
   springboot-app:
-    image: springboot-api:latest
-    container_name: springboot_container
     build:
       context: .
       dockerfile: Dockerfile
+    image: springboot-api:latest
+    container_name: springboot_container
     ports:
       - "8080:8080"
     environment:
