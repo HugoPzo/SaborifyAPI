@@ -1,8 +1,6 @@
-Aquí tienes un `README.md` completo y bien estructurado para tu proyecto **SaborifyAPI**:
-
-````markdown
 # SaborifyAPI
 
+````markdown
 **SaborifyAPI** es una API RESTful desarrollada con Spring Boot que permite la gestión de recetas de cocina. Utiliza una arquitectura basada en capas (Controladores, Servicios, Repositorios y Entidades) y está preparada para ejecutarse en contenedores Docker junto con una base de datos MySQL.
 
 ---
