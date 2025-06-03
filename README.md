@@ -1,5 +1,12 @@
 # SaborifyAPI
 
+
+### CLONAR REPOSITORIO
+
+```bash
+git clone https://github.com/HugoPzo/SaborifyAPI.git
+```
+
 ### EJECUTAR CON
 
 ```bash
