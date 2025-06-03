@@ -7,6 +7,12 @@
 git clone https://github.com/HugoPzo/SaborifyAPI.git
 ```
 
+### CAMBIAR AL REPOSITORIO
+
+```bash
+cd SaborifyAPI
+```
+
 ### EJECUTAR CON
 
 ```bash
